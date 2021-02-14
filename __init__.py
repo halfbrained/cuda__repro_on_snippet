@@ -4,6 +4,12 @@ import cudatext_keys as keys
 
 fn_icon = os.path.join(os.path.dirname(__file__), 'terminal.png')
 
+"""
+No on_snippet event in the 'editor_combo': Press Ctrl+R in the input, show complete dialog, on click there is no on_snippet() prints in Console.
+
+Works in Real editor: menu command: 'Plugins > _Repro > Real editor complete_alt()', gives dialog, on click there - on_snippet prints are present
+"""
+
 class Command:
     def __init__(self):
         self.h_dlg = None
@@ -30,18 +36,6 @@ class Command:
             })
             
         self.input = Editor(dlg_proc(h, DLG_CTL_HANDLE, index=n))
-
-        self.input.set_prop(PROP_ONE_LINE, True)
-        self.input.set_prop(PROP_GUTTER_ALL, True)
-        self.input.set_prop(PROP_GUTTER_NUM, False)
-        self.input.set_prop(PROP_GUTTER_FOLD, False)
-        self.input.set_prop(PROP_GUTTER_BM, False)
-        self.input.set_prop(PROP_GUTTER_STATES, False)
-        self.input.set_prop(PROP_UNPRINTED_SHOW, False)
-        self.input.set_prop(PROP_MARGIN, 2000)
-        self.input.set_prop(PROP_MARGIN_STRING, '')
-        self.input.set_prop(PROP_HILITE_CUR_LINE, False)
-        self.input.set_prop(PROP_HILITE_CUR_COL, False)
 
         return h
         
