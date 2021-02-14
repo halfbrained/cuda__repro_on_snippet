@@ -1,0 +1,20 @@
+[info]
+title=repro_on_snippet/
+desc=(Fill the description)
+type=cudatext-plugin
+subdir=cuda__repro_on_snippet/
+homepage=(Fill the GitHub repo URL)
+
+[item11]
+section=events
+events=on_snippet
+
+[item12]
+section=commands
+caption=_Repro\Real editor complete_alt()
+method=real_complete
+
+[bottombar1]
+hint=Fake
+icon={dir}/terminal.png
+method=open
