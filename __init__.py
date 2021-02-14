@@ -47,14 +47,7 @@ class Command:
     def form_key_down(self, id_dlg, id_ctl, data='', info=''):
 
         #Enter
-        if (id_ctl==keys.VK_ENTER) and (data==''):
-            text = self.input.get_text_line(0)
-            self.input.set_text_all('')
-            self.input.set_caret(0, 0)
-            self.run_cmd(text)
-            return False
-            
-        elif id_ctl == ord('R')  and data == 'c':
+        if id_ctl == ord('R')  and data == 'c':
             text = 'one\ttwo\tthree'
             self.input.complete_alt(text, snippet_id='fake_snippet', len_chars=0)
             return False
